@@ -78,3 +78,31 @@
     background-color: #d2d2d2;
   }
 }
+
+.info-items {
+  display: flex;
+  justify-content: space-between;
+  &__group-contents {
+    margin: 35px 0 0 40px;
+    &__title {
+      color: #333333;
+      font-size: 20px;
+    }
+    &__member {
+      margin-top: 15px;
+      color: #999999;
+      font-size: 12px;
+    }
+  }
+  &__group-edit {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 72px;
+    margin: 28px 40px 0 0;
+    padding: 0 20px;
+    border: 1px solid #38aef0;
+    color: #38aef0;
+    text-decoration: none;
+  }
+}

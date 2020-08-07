@@ -1,4 +1,10 @@
 .chat-main
   .chat-main__group-info
+    .info-items
+      .info-items__group-contents
+        %p.info-items__group-contents__title Title
+        %p.info-items__group-contents__member Member : Hogetaro
+      = link_to "hoge", class: "info-items__group-edit" do
+        Edit
   .chat-main__message-list
   .chat-main__message-form
