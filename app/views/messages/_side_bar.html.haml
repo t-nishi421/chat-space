@@ -1,3 +1,12 @@
-.Side-bar
-  .Side-bar__user-name
-  .Side-bar__group-list
+.side-bar
+  .side-bar__user-name
+    .top-items
+      %p.top-items__name hoge
+      .top-items__icons
+        = link_to "hoge", class: "top-items__icons__edit" do
+          = icon('fas', 'edit')
+          %span<>
+        = link_to "hoge", class: "top-items__icons__cog" do
+          = icon('fas', 'cog')
+          %span<>
+  .side-bar__group-list
