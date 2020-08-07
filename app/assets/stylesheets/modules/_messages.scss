@@ -51,6 +51,17 @@
   }
 }
 
+.group {
+  padding: 20px 20px 40px 20px;
+  &__name {
+    font-size: 15px;
+  }
+  &__message {
+    margin-top: 5px;
+    font-size: 11px;
+  }
+}
+
 .chat-main {
   width: calc(100vw - 300px);
   &__group-info {
