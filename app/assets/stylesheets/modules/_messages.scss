@@ -14,7 +14,6 @@
   width: 300px;
   color: #ffffff;
   font-weight: bold;
-  
   &__user-name {
     height: 100px;
     background-color: #253141;
@@ -104,5 +103,27 @@
     border: 1px solid #38aef0;
     color: #38aef0;
     text-decoration: none;
+  }
+}
+
+.message-items {
+  padding: 35px 0 11px 40px;
+  &__top {
+    display: flex;
+    &__name {
+      color: #333333;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    &__date {
+      color: #999999;
+      font-size: 12px;
+      padding-left: 10px;
+    }
+  }
+  &__message {
+    color: #434a54;
+    font-size: 14px;
+    margin-top: 12px;
   }
 }
