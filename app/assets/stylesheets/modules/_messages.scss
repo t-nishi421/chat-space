@@ -6,6 +6,10 @@
   color: #ffffff;
 }
 
+.file {
+  display: none;
+}
+
 .wrapper {
   display: flex;
 }
@@ -137,16 +141,19 @@
   &__input {
     height: 50px;
     width: calc(100vw - 504.34px);
-    padding: 0 10px;
     background-color: #ffffff;
     display: flex;
     align-items: center;
+    position: relative;
     &__text {
+      padding: 0 10px;
+      height: 50px;
       border: 0px;
       width: 100%;
     }
     &__image {
-      display: none;
+      position: absolute;
+      right: 10px;
     }
   }
   &__submit {

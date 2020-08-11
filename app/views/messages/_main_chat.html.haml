@@ -21,7 +21,7 @@
     .form-items
       .form-items__input
         %input.form-items__input__text{type: "text", placeholder: "type a message", name: "message[content]", id: "message_content"}
-        %input{class: "form-items__input__image", type: "file", id: "message-image"}
-        %label{for: "message-image"}
+        %input{class: "file", type: "file", id: "message-image"}
+        %label{class: "form-items__input__image", for: "message-image"}
           = icon('fa', 'image fa-lg')
       %input.form-items__submit{type: "submit", value: "Send"}
