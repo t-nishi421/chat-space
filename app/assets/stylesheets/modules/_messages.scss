@@ -1,3 +1,6 @@
+@import "mixin/flex-bundle";
+@import "mixin/font-style";
+
 * {
   box-sizing: border-box;
 }
@@ -16,13 +19,11 @@
 
 .side-bar {
   width: 300px;
-  color: #ffffff;
-  font-weight: bold;
+  @include font-style(#ffffff, "", bold);
   &__user-name {
     height: 100px;
     background-color: #253141;
-    display: flex;
-    align-items: center;
+    @include flex-bundle("",center);
   }
   &__group-list {
     height: calc(100vh - 100px);
@@ -34,16 +35,13 @@
   height: 20px;
   width: 260px;
   margin: 0 20px;
-  display: flex;
-  justify-content: space-between;
+  @include flex-bundle(space-between, "");
   &__name {
-    font-size: 16px;
+    @include font-style("", 16px, "");
   }
   &__icons {
     width: 60px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    @include flex-bundle(flex-end, center);
     &__edit {
       text-decoration: none;
     }
@@ -57,11 +55,11 @@
 .group {
   padding: 20px 20px 40px 20px;
   &__name {
-    font-size: 15px;
+    @include font-style("", 15px, "");
   }
   &__message {
     margin-top: 5px;
-    font-size: 11px;
+    @include font-style("", 11px, "");
   }
 }
 
@@ -77,8 +75,7 @@
     background-color: #fafafa;
   }
   &__message-form {
-    display: flex;
-    align-items: center;
+    @include flex-bundle("", center);
     height: 90px;
     background-color: #d2d2d2;
     overflow: hidden;
@@ -86,29 +83,25 @@
 }
 
 .info-items {
-  display: flex;
-  justify-content: space-between;
+  @include flex-bundle(space-between, "");
   &__group-contents {
     margin: 35px 0 0 40px;
     &__title {
-      color: #333333;
-      font-size: 20px;
+      @include font-style(#333333, 20px, "");
     }
     &__member {
       margin-top: 15px;
-      color: #999999;
-      font-size: 12px;
+      @include font-style(#999999, 12px, "");
     }
   }
   &__group-edit {
-    display: flex;
-    align-items: center;
+    @include flex-bundle("", center);
+    @include font-style(#38aef0, "", "");
     height: 40px;
     width: 72px;
     margin: 28px 40px 0 0;
     padding: 0 20px;
     border: 1px solid #38aef0;
-    color: #38aef0;
     text-decoration: none;
   }
 }
@@ -116,34 +109,29 @@
 .message-items {
   padding: 35px 0 11px 40px;
   &__top {
-    display: flex;
+    @include flex-bundle("", "");
     &__name {
-      color: #333333;
-      font-size: 16px;
-      font-weight: bold;
+      @include font-style(#333333, 16px, bold);
     }
     &__date {
-      color: #999999;
-      font-size: 12px;
+      @include font-style(#999999, 12px, "");
       padding-left: 10px;
     }
   }
   &__message {
-    color: #434a54;
-    font-size: 14px;
+    @include font-style(#434a54, 14px, "");
     margin-top: 12px;
   }
 }
 
 .form-items {
+  @include flex-bundle("", "");
   margin: 0 40px;
-  display: flex;
   &__input {
+    @include flex-bundle("", center);
     height: 50px;
     width: calc(100vw - 504.34px);
     background-color: #ffffff;
-    display: flex;
-    align-items: center;
     position: relative;
     &__text {
       padding: 0 10px;
@@ -157,10 +145,9 @@
     }
   }
   &__submit {
+    @include font-style(#fff, 16px, "");
     height: 50px;
-    color: #fff;
     border: 0px;
-    font-size: 16px;
     background-color: #38aef0;
     margin-left: 15px;
     padding: 0 30px;
