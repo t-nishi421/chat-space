@@ -18,3 +18,10 @@
         %p.message-items__top__date 2020/02/20(Sun) 20:20:20
       %p.message-items__message Hoge is hoge.
   .chat-main__message-form
+    .form-items
+      .form-items__input
+        %input.form-items__input__text{type: "text", placeholder: "type a message", name: "message[content]", id: "message_content"}
+        %input{class: "form-items__input__image", type: "file", id: "message-image"}
+        %label{for: "message-image"}
+          = icon('fa', 'image fa-lg')
+      %input.form-items__submit{type: "submit", value: "Send"}

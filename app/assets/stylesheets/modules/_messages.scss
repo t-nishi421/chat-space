@@ -73,8 +73,11 @@
     background-color: #fafafa;
   }
   &__message-form {
+    display: flex;
+    align-items: center;
     height: 90px;
     background-color: #d2d2d2;
+    overflow: hidden;
   }
 }
 
@@ -125,5 +128,34 @@
     color: #434a54;
     font-size: 14px;
     margin-top: 12px;
+  }
+}
+
+.form-items {
+  margin: 0 40px;
+  display: flex;
+  &__input {
+    height: 50px;
+    width: calc(100vw - 504.34px);
+    padding: 0 10px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    &__text {
+      border: 0px;
+      width: 100%;
+    }
+    &__image {
+      display: none;
+    }
+  }
+  &__submit {
+    height: 50px;
+    color: #fff;
+    border: 0px;
+    font-size: 16px;
+    background-color: #38aef0;
+    margin-left: 15px;
+    padding: 0 30px;
   }
 }
