@@ -1,0 +1,93 @@
+@import "mixin/flex-bundle";
+@import "mixin/font-style";
+
+.chat-main {
+  width: calc(100vw - 300px);
+  &__group-info {
+    height: 100px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+  }
+  &__message-list {
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
+  }
+  &__message-form {
+    @include flex-bundle("", center);
+    height: 90px;
+    background-color: #d2d2d2;
+    overflow: hidden;
+  }
+}
+
+.info-items {
+  @include flex-bundle(space-between, "");
+  &__group-contents {
+    margin: 35px 0 0 40px;
+    &__title {
+      @include font-style(#333333, 20px, "");
+    }
+    &__member {
+      margin-top: 15px;
+      @include font-style(#999999, 12px, "");
+    }
+  }
+  &__group-edit {
+    @include flex-bundle("", center);
+    @include font-style(#38aef0, "", "");
+    height: 40px;
+    width: 72px;
+    margin: 28px 40px 0 0;
+    padding: 0 20px;
+    border: 1px solid #38aef0;
+    text-decoration: none;
+  }
+}
+
+.message-items {
+  padding: 35px 0 11px 40px;
+  &__top {
+    @include flex-bundle("", "");
+    &__name {
+      @include font-style(#333333, 16px, bold);
+    }
+    &__date {
+      @include font-style(#999999, 12px, "");
+      padding-left: 10px;
+    }
+  }
+  &__message {
+    @include font-style(#434a54, 14px, "");
+    margin-top: 12px;
+  }
+}
+
+.form-items {
+  @include flex-bundle("", "");
+  margin: 0 40px;
+  &__input {
+    @include flex-bundle("", center);
+    height: 50px;
+    width: calc(100vw - 504.34px);
+    background-color: #ffffff;
+    position: relative;
+    &__text {
+      padding: 0 10px;
+      height: 50px;
+      border: 0px;
+      width: 100%;
+    }
+    &__image {
+      position: absolute;
+      right: 10px;
+    }
+  }
+  &__submit {
+    @include font-style(#fff, 16px, "");
+    height: 50px;
+    border: 0px;
+    background-color: #38aef0;
+    margin-left: 15px;
+    padding: 0 30px;
+  }
+}

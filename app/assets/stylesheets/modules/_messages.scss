@@ -1,0 +1,18 @@
+@import "side-bar";
+@import "main-chat";
+
+* {
+  box-sizing: border-box;
+}
+
+.fas {
+  color: #ffffff;
+}
+
+.file {
+  display: none;
+}
+
+.wrapper {
+  display: flex;
+}
