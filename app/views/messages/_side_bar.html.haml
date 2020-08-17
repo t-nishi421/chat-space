@@ -11,9 +11,10 @@
           = icon('fas', 'cog')
           %span<>
   .side-bar__group-list
-    .group
-      %p.group__name HogeCulb
-      %p.group__message hoooooooge
-    .group
-      %p.group__name HugaCulb
-      %p.group__message hugaaaaaaa
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません
