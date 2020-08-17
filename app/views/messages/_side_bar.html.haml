@@ -4,16 +4,17 @@
       %p.top-items__name
         = current_user.name
       .top-items__icons
-        = link_to "hoge", class: "top-items__icons__edit" do
+        = link_to new_group_path, class: "top-items__icons__edit" do
           = icon('fas', 'edit')
           %span<>
         = link_to edit_user_path(current_user), class: "top-items__icons__cog" do
           = icon('fas', 'cog')
           %span<>
   .side-bar__group-list
-    .group
-      %p.group__name HogeCulb
-      %p.group__message hoooooooge
-    .group
-      %p.group__name HugaCulb
-      %p.group__message hugaaaaaaa
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            メッセージはまだありません
