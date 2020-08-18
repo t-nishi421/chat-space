@@ -12,12 +12,7 @@
       = link_to edit_group_path(@group.id), class: "info-items__group-edit" do
         Edit
   .chat-main__message-list
-    -# .message-items
-    -#   .message-items__top
-    -#     %p.message-items__top__name Hogetaro
-    -#     %p.message-items__top__date 2020/02/20(Sun) 20:20:20
-    -#   %p.message-items__message Hoge is hoge.
-    
+
     .MessageField
       = render @messages
 
