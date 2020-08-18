@@ -2,26 +2,30 @@
   .chat-main__group-info
     .info-items
       .info-items__group-contents
-        %p.info-items__group-contents__title Title
-        %p.info-items__group-contents__member Member : Hogetaro
-      = link_to "hoge", class: "info-items__group-edit" do
+        %p.info-items__group-contents__title
+          = @group.name
+        %p.info-items__group-contents__member
+          %span Member：
+          - @group.users.each do |u|
+            = u.name
+
+      = link_to edit_group_path(@group.id), class: "info-items__group-edit" do
         Edit
   .chat-main__message-list
-    .message-items
-      .message-items__top
-        %p.message-items__top__name Hogetaro
-        %p.message-items__top__date 2020/02/20(Sun) 20:20:20
-      %p.message-items__message Hoge is hoge.
-    .message-items
-      .message-items__top
-        %p.message-items__top__name Hogetaro
-        %p.message-items__top__date 2020/02/20(Sun) 20:20:20
-      %p.message-items__message Hoge is hoge.
+    -# .message-items
+    -#   .message-items__top
+    -#     %p.message-items__top__name Hogetaro
+    -#     %p.message-items__top__date 2020/02/20(Sun) 20:20:20
+    -#   %p.message-items__message Hoge is hoge.
+    
+    .MessageField
+      = render @messages
+
   .chat-main__message-form
-    .form-items
+    = form_with model: [@group, @message], html: {class: "form-items"}, local: true do |f|
       .form-items__input
-        %input.form-items__input__text{type: "text", placeholder: "type a message", name: "message[content]", id: "message_content"}
-        %input{class: "file", type: "file", id: "message-image"}
-        %label{class: "form-items__input__image", for: "message-image"}
+        = f.text_field :content, class: 'form-items__input__text', placeholder: 'type a message'
+        = f.label :image, class: 'form-items__input__image' do
           = icon('fa', 'image fa-lg')
-      %input.form-items__submit{type: "submit", value: "Send"}
+          = f.file_field :image, class: 'file'
+      = f.submit 'Send', class: 'form-items__submit'
