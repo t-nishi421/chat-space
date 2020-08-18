@@ -8,14 +8,11 @@
           %span Member：
           - @group.users.each do |u|
             = u.name
-
       = link_to edit_group_path(@group.id), class: "info-items__group-edit" do
         Edit
   .chat-main__message-list
-
     .MessageField
       = render @messages
-
   .chat-main__message-form
     = form_with model: [@group, @message], html: {class: "form-items"}, local: true do |f|
       .form-items__input
