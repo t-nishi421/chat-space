@@ -18,6 +18,17 @@ $(function(){
     $("#UserSearchResult").append(html);
   }
 
+  function appendUser(userName, userId) {
+    let html = `
+                <div class="ChatMember">
+                  <p class="ChatMember__name">${userName}</p>
+                  <input name="group[user_ids][]" type="hidden" value="${userId}" />
+                  <div class="ChatMember__remove ChatMember__button">削除</div>
+                </div>
+               `;
+    $(".ChatMembers").append(html)
+  }
+
   $("#UserSearch__field").on("keyup", function(){
     let input = $("#UserSearch__field").val();
     $.ajax({
@@ -42,4 +53,13 @@ $(function(){
       alert("ユーザー検索に失敗しました")
     });
   });
+
+  $("#UserSearchResult").on('click', ".ChatMember__add", function(){
+    $(this).parent(".ChatMember").remove();
+    appendUser($(this).data('user-name'), $(this).data('user-id'));
+  })
+
+  $(".ChatMembers").on('click', ".ChatMember__remove", function(){
+    $(this).parent(".ChatMember").remove();
+  })
 });
