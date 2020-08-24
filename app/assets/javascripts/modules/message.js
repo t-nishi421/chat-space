@@ -3,7 +3,7 @@ $(function(){
     let html = ""
     if (message.image) {
       html = 
-        `<div class="message-items">
+        `<div class="message-items" data-message-id=${message.id}>
           <div class="message-items__top">
             <div class="message-items__top__name">
               ${message.user_name}
@@ -21,7 +21,7 @@ $(function(){
         </div>`
     } else {
       html = 
-        `<div class="message-items">
+        `<div class="message-items" data-message-id=${message.id}>
           <div class="message-items__top">
             <div class="message-items__top__name">
               ${message.user_name}
